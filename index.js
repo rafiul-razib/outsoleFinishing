@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(fileUpload())
 
 
-const uri = "mongodb+srv://rafi25:apex22001@cluster0.9gfgt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.9gfgt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function run() {
@@ -58,6 +58,15 @@ async function run() {
     app.get('/recipe', async(req, res)=>{
         const cursor = recipeCollection.find({});
         const result = await cursor.toArray();
+        res.json(result)
+    })
+
+    // GET recipe by id
+
+    app.get('/recipe/:id', async(req, res)=>{
+        const id = req.params.id;
+        const query = {_id: ObjectId(id)}
+        const result = await recipeCollection.findOne(query);
         res.json(result)
     })
       
