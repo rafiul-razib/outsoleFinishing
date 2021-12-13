@@ -73,6 +73,13 @@ async function run() {
         const result = await recipeCollection.findOne(query);
         res.json(result)
     })
+
+    app.delete('/recipe/:id', async(req, res)=>{
+        const id = req.params.id;
+        const query = {_id: ObjectId(id)};
+        const result = await recipeCollection.deleteOne(query);
+        res.json(result)
+    })
       
     } finally {
     //   await client.close();
