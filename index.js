@@ -35,10 +35,10 @@ async function run() {
         const finishing = req.body.finishing;
         const manpower = req.body.manpower;
 
-        const pic = req.files.image;
-        const picData = pic.data;
-        const encodedPic = picData.toString('base64');
-        const imageBuffer = Buffer.from(encodedPic, 'base64');
+        // const pic = req.files.image;
+        // const picData = pic.data;
+        // const encodedPic = picData.toString('base64');
+        // const imageBuffer = Buffer.from(encodedPic, 'base64');
 
         const outsoleRecipe = {
             last,
@@ -46,7 +46,7 @@ async function run() {
             customer,
             finishing,
             manpower,
-            imageBuffer
+            // imageBuffer
         }
 
         const result = await recipeCollection.insertOne(outsoleRecipe);
