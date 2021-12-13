@@ -35,6 +35,9 @@ async function run() {
         const finishing = req.body.finishing;
         const manpower = req.body.manpower;
 
+        const imageUrl = req.body.imageUrl
+
+        console.log(req.body)
         // const pic = req.files.image;
         // const picData = pic.data;
         // const encodedPic = picData.toString('base64');
@@ -46,6 +49,7 @@ async function run() {
             customer,
             finishing,
             manpower,
+            imageUrl,
             // imageBuffer
         }
 
