@@ -34,6 +34,7 @@ async function run() {
         const customer = req.body.customer;
         const finishing = req.body.finishing;
         const manpower = req.body.manpower;
+        const color = req.body.color;
 
         const imageUrl = req.body.imageUrl
 
@@ -50,6 +51,7 @@ async function run() {
             finishing,
             manpower,
             imageUrl,
+            color
             // imageBuffer
         }
 
