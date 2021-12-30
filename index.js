@@ -35,6 +35,7 @@ async function run() {
         const finishing = req.body.finishing;
         const manpower = req.body.manpower;
         const color = req.body.color;
+        const date = req.body.date;
 
         const imageUrl = req.body.imageUrl
 
@@ -51,7 +52,8 @@ async function run() {
             finishing,
             manpower,
             imageUrl,
-            color
+            color,
+            date
             // imageBuffer
         }
 
